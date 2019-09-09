@@ -1,6 +1,7 @@
 package co.apptailor.googlesignin;
 
 import android.view.View;
+import android.widget.Button;
 
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.react.uimanager.annotations.ReactProp;
@@ -26,21 +27,23 @@ public class RNGoogleSigninButtonViewManager extends SimpleViewManager<SignInBut
                 reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("RNGoogleSigninButtonClicked", null);
             }
         });
+        Button root = (Button) button.getChildAt(0);
+        root.setBackgroundDrawable(reactContext.getResources().getDrawable(R.drawable.common_google_signin_btn_text_light_normal));
         return button;
     }
 
     @ReactProp(name = "size")
     public void setSize(SignInButton button, int size) {
-        button.setSize(size);
+//         button.setSize(size);
     }
 
     @ReactProp(name = "color")
     public void setColor(SignInButton button, int color) {
-        button.setColorScheme(color);
+//         button.setColorScheme(color);
     }
 
     @ReactProp(name = "disabled")
     public void setDisabled(SignInButton button, boolean disabled) {
-        button.setEnabled(!disabled);
+//         button.setEnabled(!disabled);
     }
 }
